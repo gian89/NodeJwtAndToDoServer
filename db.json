@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "username": "admin5",
+      "password": "$2a$10$KR/Qv0b2Lw2/da4QZX3a/.oqNfV4K.vQPSJbJGMqdGfYozblwBOrO",
+      "id": 7
+    },
+    {
+      "username": "test1",
+      "password": "$2a$10$tSNWDStY5LF6js5lTdMlNOajYMoGz5l5woBH7atxVZjqUPhgswGhu",
+      "id": 8
+    },
+    {
+      "username": "test2",
+      "password": "$2a$10$yTw7THFbj.vbxtrM5KPL4uj9Jo3h4jhMajBXhL0.rpq.5oUCELTha",
+      "id": 9
+    },
+    {
+      "username": "test3",
+      "password": "$2a$10$ryAZnoJV2SoPMbfPzaPB..6Kfa.GETp.qzTTBz3gMRPqwZ79nj4Qe",
+      "id": 10
+    }
+  ],
+  "tasks": [
+    {
+      "date": "2021-03-31T15:12:35.839Z",
+      "text": "Task n. 1",
+      "username": "test1",
+      "status": "toDo",
+      "id": 1
+    },
+    {
+      "date": "2021-05-14T15:12:55.023Z",
+      "text": "Task n. 2",
+      "username": "test1",
+      "status": "done",
+      "id": 2
+    },
+    {
+      "date": "2021-03-27T16:26:57.923Z",
+      "text": "Task n. 1",
+      "username": "test2",
+      "status": "toDo",
+      "id": 3
+    },
+    {
+      "date": "2021-04-17T15:27:13.169Z",
+      "text": "Task n. 2",
+      "username": "test2",
+      "status": "done",
+      "id": 4
+    },
+    {
+      "date": "2021-04-15T15:58:58.323Z",
+      "text": "Task n. 1",
+      "username": "test3",
+      "status": "toDo",
+      "id": 5
+    },
+    {
+      "date": "1",
+      "text": "prova task",
+      "status": "testFinale4",
+      "id": 6
+    },
+    {
+      "date": "2021-03-19T21:17:07.872Z",
+      "text": "gggg",
+      "username": "admin5",
+      "status": "done",
+      "id": 7
+    },
+    {
+      "date": "2021-03-26T21:34:26.458Z",
+      "text": "jjjjj",
+      "username": "admin5",
+      "status": "toDo",
+      "id": 8
+    }
+  ]
+}
