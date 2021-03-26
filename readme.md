@@ -14,19 +14,17 @@
 ### Il server offre un servizio di gestione dei Task e delle utenze.
 
 
-- Gestione delle utenze
+- **Gestione delle utenze:**
     - server di autenticazione Jwt che fornisce access Token e refresh Token 
-    - funzioni di verifica della validità  del Token e di aggiornamento dell'access Token tramite refresh Token
+    - funzioni di verifica della validità del Token e di aggiornamento dell'access Token tramite refresh Token
     - le chiamate alla funzione di gestione dei task vengono prime verificate tramite l'access Token
     - le password salvate sono criptate
     - Sono presenti le classiche funzioni: signup, login, e verifica di validità token.
-- Gestione dei Task:
+- **Gestione dei Task:**
   - possibilità di aggiungere, modificare, eliminare i task
   - Ricerca dei task tramite username
-    
-<br>
-Se vuoi testare il servizio puoi utilizzare l'app per IOS/ANDROID sviluppata con React Native ed Expo
-<br>
-<a href="https://github.com/gian89/ToDoApp">ToDoApp</a>
-<br>
+  
+Se vuoi testare il server:
 
+- puoi utilizzare l'app per IOS/ANDROID sviluppata con React Native ed Expo: <a href="https://github.com/gian89/ToDoApp">ToDoApp</a>
+- In alternativa puoi importare in Postman la collezione di API **"Jwt and Todo.postman_collection"** che trovi all'interno del progetto

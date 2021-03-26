@@ -1,10 +1,9 @@
 const secretKey = "secretkey23456";
 
-// const expireTime = 24  *  60  *  60;
-// const expireTime = 60 * 30;
-const expireTime = 10;
-// const refreshExpireTime = 24 * 60 * 60 * 24;
-const refreshExpireTime = 500;
+const expireTime = 24  *  60  *  60;
+// const expireTime = 10;
+const refreshExpireTime = 24 * 60 * 60 * 24;
+// const refreshExpireTime = 500;
 
 const  port  =  process.env.PORT  ||  3001;
 

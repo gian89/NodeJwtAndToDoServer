@@ -48,17 +48,10 @@
     },
     {
       "date": "2021-03-27T16:26:57.923Z",
-      "text": "Task n. 1.test2.test",
+      "text": "Task n. 1.test2.test2",
       "username": "test2",
       "status": "toDo",
       "id": 3
-    },
-    {
-      "date": "2021-04-17T15:27:13.169Z",
-      "text": "Task n. 2",
-      "username": "test2",
-      "status": "done",
-      "id": 4
     },
     {
       "date": "2021-04-15T15:58:58.323Z",
@@ -232,13 +225,6 @@
       "username": "admin6",
       "status": "toDo",
       "id": 29
-    },
-    {
-      "date": "2021-04-15T08:58:07.909Z",
-      "text": "Tdhndb",
-      "username": "admin7",
-      "status": "toDo",
-      "id": 30
     }
   ]
 }
