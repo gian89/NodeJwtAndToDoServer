@@ -93,8 +93,18 @@ router.post('/login', (req, res) => {
 });
 
 //Funzione per la verifica della validità dell'accessToken
-router.post('/testAccessToken', (req, res) => {
-    const accessToken = req.body.access_token;
+router.get('/testAccessToken', (req, res) => {
+    // const accessToken = req.body.access_token;
+    const authorization = req.headers.authorization
+    if (!authorization) {
+        let error = {
+            "status": 401,
+            "message": "Unauthorized"
+        }
+        res.status(401).send(error);
+    }
+    let accessToken = authorization.split(' ')[1];
+
     verifyUser(accessToken)
         .then(verifyAccess => {
             res.status(200).send({
@@ -111,8 +121,17 @@ router.post('/testAccessToken', (req, res) => {
 });
 
 //Funzione per aggiornare l'accessToken partendo dal refreshToken
-router.post('/newAccessToken', (req, res) => {
-    const refreshToken = req.body.refresh_token;
+router.get('/newAccessToken', (req, res) => {
+    // const refreshToken = req.body.refresh_token;
+    const authorization = req.headers.authorization
+    if (!authorization) {
+        let error = {
+            "status": 401,
+            "message": "Unauthorized"
+        }
+        res.status(401).send(error);
+    }
+    let refreshToken = authorization.split(' ')[1];
     newAccessToken(refreshToken)
         .then(value => {
             res.status(200).send({"accessToken": value});
@@ -121,6 +140,5 @@ router.post('/newAccessToken', (req, res) => {
             res.status(401).send(reason);
         })
 });
-
 
 module.exports = router;

@@ -5,9 +5,8 @@ const {secretKey,expireTime} = require('../../config');
 const verifyUser = (accessToken) => {
     return new Promise((resolve, reject) => {
         try{
-            console.log("inizio verifica token");
             const payload = jwt.verify(accessToken, secretKey);
-            console.log('payload:', payload);
+            // console.log('payload:', payload);
             resolve(payload);
         } catch(error) {
             if (error instanceof jwt.TokenExpiredError){
@@ -33,9 +32,8 @@ const verifyUser = (accessToken) => {
 const newAccessToken = (refreshToken) => {
     return new Promise((resolve, reject) => {
         try{
-            console.log("inizio verifica token");
             const payload = jwt.verify(refreshToken, secretKey);
-            console.log('payload:', payload);
+            // console.log('payload:', payload);
             const  accessToken  =  jwt.sign({ id: payload.id, username: payload.username}, secretKey, {
                 expiresIn:  expireTime
             });

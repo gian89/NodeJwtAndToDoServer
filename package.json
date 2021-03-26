@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently --kill-others \"json-server --watch db.json\" \"node .\\app.js\""
+    "dev": "concurrently --kill-others \"json-server --watch db.json\" \"node .\\app.js\"",
+    "devNodemon": "concurrently --kill-others \"json-server --watch db.json\" \"nodemon .\\app.js\""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

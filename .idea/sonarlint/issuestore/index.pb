@@ -20,3 +20,5 @@ ReadMe.txt,5\2\5225f01f4c17d05f03bd8a6c2a2dfc128c7f65d7
 	readme.md,2\7\275d783e298228506068436512433d343feb52aa
 <
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+A
+package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47

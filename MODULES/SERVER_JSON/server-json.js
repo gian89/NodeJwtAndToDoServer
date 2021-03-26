@@ -16,14 +16,12 @@ const findUserByUsername = (username) => {
 };
 
 const addTask = (body) => {
-    console.log('addtask');
     let url = `http://localhost:3000/tasks`;
     return apiServerJsonCaller(url, 'POST', body);
 };
 
 const updateTask = (body, id) => {
     let url = `http://localhost:3000/tasks/${id}`;
-    console.log("url: " + url);
     return apiServerJsonCaller(url, 'PUT', body);
 };
 
