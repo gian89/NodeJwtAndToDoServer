@@ -60,6 +60,7 @@ const apiServerJsonCaller = (url, method = 'GET', body = "") => {
                     }
                 );
             }else{
+                console.log('sono in else')
                 response = await fetch(url,
                     {
                         method: method,

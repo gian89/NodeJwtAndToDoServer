@@ -29,6 +29,26 @@
       "username": "admin7",
       "password": "$2a$10$elcIAN18nVZUE/Yf0ByCJuq5gnjEH03Ostldwbw22zMziAWbEE9rS",
       "id": 12
+    },
+    {
+      "username": "admin8",
+      "password": "$2a$10$0p9fNaxn2t2w4f3wc0tGzOmchEWiFn5ngtpZPMapcz537WCtaUEaq",
+      "id": 13
+    },
+    {
+      "username": "admin3",
+      "password": "admin3",
+      "id": 14
+    },
+    {
+      "username": "admin9",
+      "password": "$2a$10$6OUSzNBcLWa.1xykydnS7.0oOnMvvhrlqCSUeyWVO8RoCAAC4Pqzm",
+      "id": 15
+    },
+    {
+      "username": "admin10",
+      "password": "$2a$10$TrzPAnaYluVziXAMVrQPp.TP4WqPahqY9bIBm.FeiuFh6Bi08krIa",
+      "id": 16
     }
   ],
   "tasks": [
@@ -48,7 +68,7 @@
     },
     {
       "date": "2021-03-27T16:26:57.923Z",
-      "text": "Task n. 1.test2.test2",
+      "text": "Task n. 1.test2.test",
       "username": "test2",
       "status": "toDo",
       "id": 3
@@ -61,10 +81,11 @@
       "id": 5
     },
     {
+      "id": 6,
       "date": "1",
-      "text": "prova task",
-      "status": "testFinale4",
-      "id": 6
+      "text": "prova task2",
+      "user": "admin5",
+      "status": "test3"
     },
     {
       "date": "2021-03-19T21:17:07.872Z",

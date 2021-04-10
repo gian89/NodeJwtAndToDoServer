@@ -12,6 +12,11 @@ const {port} = require('./config');
 const cors = require('cors');
 
 app.use(cors());
+/*
+app.use(cors({
+  credentials: true,
+}));
+*/
 
 
 router.use(bodyParser.urlencoded({ extended:  false }));

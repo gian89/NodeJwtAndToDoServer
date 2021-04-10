@@ -24,10 +24,16 @@ router.get('/getTask', async (req, res) => {
             return res.status(200).send(value);
         })
         .catch(err => {
-            if (err.status === 400) {
+            /*if (err.status === 400) {
                 return res.status(400).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            if (err.status === 401) {
+                return res.status(401).send(JSON.stringify(err));
+            }*/
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
+            }
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 
@@ -39,10 +45,10 @@ router.get('/getTaskByUsername', async (req, res) => {
             return res.status(200).send(value);
         })
         .catch(err => {
-            if (err.status === 400) {
-                return res.status(400).send(JSON.stringify(err));
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 
@@ -61,10 +67,10 @@ router.post('/addTask', async (req, res) => {
             return res.status(200).send(value);
         })
         .catch(err => {
-            if (err.status === 400) {
-                return res.status(400).send(JSON.stringify(err));
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 
@@ -82,15 +88,15 @@ router.put('/updateTask/', async (req, res) => {
             return res.status(200).send(value);
         })
         .catch(err => {
-            if (err.status === 400) {
-                return res.status(400).send(JSON.stringify(err));
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 
 
-router.get('/findTaskById', async (req, res) => {
+router.get('/getTaskById', async (req, res) => {
     let id = req.query.id;
     const authorization = req.headers.authorization
     routeCaller(findTaskById, authorization, id)
@@ -98,25 +104,25 @@ router.get('/findTaskById', async (req, res) => {
             return res.status(200).send(value);
         })
         .catch(err => {
-            if (err.status === 400) {
-                return res.status(400).send(JSON.stringify(err));
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 
 router.delete('/deleteTask', async (req, res) => {
-    let id = req.body.id;
+    let id = req.query.id;
     const authorization = req.headers.authorization
     routeCaller(deleteTask, authorization, id)
         .then(value => {
-            return res.status(200).send(value);
+            return res.status(200).send(JSON.stringify({status: 200, message: "task deleted"}));
         })
         .catch(err => {
-            if (err.status === 400) {
-                return res.status(400).send(JSON.stringify(err));
+            if (err.status) {
+                return res.status(err.status).send(JSON.stringify(err));
             }
-            return res.status(500).send(JSON.stringify(err));
+            return res.status(500).send(JSON.stringify({status: 500, message: JSON.stringify(err)}));
         });
 });
 

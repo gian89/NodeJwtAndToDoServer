@@ -93,7 +93,7 @@ router.post('/login', (req, res) => {
 });
 
 //Funzione per la verifica della validità dell'accessToken
-router.get('/testAccessToken', (req, res) => {
+router.get('/checkAccessToken', (req, res) => {
     // const accessToken = req.body.access_token;
     const authorization = req.headers.authorization
     if (!authorization) {
@@ -121,7 +121,7 @@ router.get('/testAccessToken', (req, res) => {
 });
 
 //Funzione per aggiornare l'accessToken partendo dal refreshToken
-router.get('/newAccessToken', (req, res) => {
+router.get('/refreshAccessToken', (req, res) => {
     // const refreshToken = req.body.refresh_token;
     const authorization = req.headers.authorization
     if (!authorization) {

@@ -27,4 +27,5 @@
 Se vuoi testare il server:
 
 - puoi utilizzare l'app per IOS/ANDROID sviluppata con React Native ed Expo: [ToDoApp](https://github.com/gian89/ToDoApp)
-- In alternativa puoi importare in Postman la [collezione di API](Jwt_and_Todo.postman_collection.json) che trovi all'interno del progetto
+- puoi importare in Postman la [collezione di API](Jwt_and_Todo.postman_collection.json) che trovi all'interno del progetto
+- puoi utilizzare il [file YAML](s.gianmarc-NodeJwtAndTodoServe-1.0.0-resolved.yaml) e importarlo nello swagger editor

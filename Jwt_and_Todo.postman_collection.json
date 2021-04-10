@@ -11,11 +11,14 @@
 				{
 					"name": "AddUser",
 					"request": {
+						"auth": {
+							"type": "bearer"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"admin2\",\n\t\"password\": \"admin2\"\n}",
+							"raw": "{\n\t\"username\": \"admin3\",\n\t\"password\": \"admin3\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,10 +26,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3000/users",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3000",
 							"path": [
@@ -56,20 +58,19 @@
 					"response": []
 				},
 				{
-					"name": "DeleteUser Copy",
+					"name": "DeleteUser",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users/9",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3000/users/13",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3000",
 							"path": [
 								"users",
-								"9"
+								"13"
 							]
 						}
 					},
@@ -81,10 +82,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/users?username=admin6",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3000/users?username=admin6",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3000",
 							"path": [
@@ -100,90 +100,6 @@
 									"key": "username",
 									"value": "admin6"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateTask",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": \"6\",\n    \"date\": \"1\",\n    \"text\": \"prova task\",\n    \"user\": \"admin5\",\n    \"status\": \"test3\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/tasks/6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"tasks",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetTaskByUsername",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/tasks?username=admin5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"tasks"
-							],
-							"query": [
-								{
-									"key": "username",
-									"value": "admin5"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AddTask Copy 2",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"date\": \"1\",\n    \"text\": \"terzo task\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/tasks/1/task",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"tasks",
-								"1",
-								"task"
 							]
 						}
 					},
@@ -208,20 +124,99 @@
 					"response": []
 				},
 				{
+					"name": "UpdateTask",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"6\",\n    \"date\": \"1\",\n    \"text\": \"prova task2\",\n    \"user\": \"admin5\",\n    \"status\": \"test3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{my_ip}}:3000/tasks/6",
+							"host": [
+								"{{my_ip}}"
+							],
+							"port": "3000",
+							"path": [
+								"tasks",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTaskByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{my_ip}}:3000/tasks?username=admin5",
+							"host": [
+								"{{my_ip}}"
+							],
+							"port": "3000",
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "admin5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTask",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"1\",\n    \"text\": \"prova task2.2\",\n    \"user\": \"admin5\",\n    \"status\": \"test3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{my_ip}}:3000/tasks/",
+							"host": [
+								"{{my_ip}}"
+							],
+							"port": "3000",
+							"path": [
+								"tasks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteTask",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/tasks/4",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3000/tasks/30",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3000",
 							"path": [
 								"tasks",
-								"4"
+								"30"
 							]
 						}
 					},
@@ -238,13 +233,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://192.168.2.141:3001/getUsers",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/getUsers",
 							"host": [
-								"192",
-								"168",
-								"2",
-								"141"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
@@ -261,7 +252,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"admin5\",\r\n  \"password\": \"admin7\"\r\n}",
+							"raw": "{\r\n  \"username\": \"admin9\",\r\n  \"password\": \"admin9\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -269,10 +260,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/registerUser",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/registerUser",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
@@ -289,7 +279,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"username\": \"admin5\",\r\n  \"password\": \"admin5\"\r\n}",
+							"raw": "{\r\n  \"username\": \"admin8\",\r\n  \"password\": \"admin8\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -297,28 +287,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/login/?=",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/login",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
-								"login",
-								""
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
+								"login"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "VerifyAccessApp",
+					"name": "CheckAccessApp",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -327,7 +309,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
@@ -341,21 +323,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/testAccessToken",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/checkAccessToken",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
-								"testAccessToken"
+								"checkAccessToken"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "NewAccessApp",
+					"name": "RefreshAccessApp",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -364,13 +345,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJhZG1pbjUiLCJpYXQiOjE2MTY3NDU5MzgsImV4cCI6MTYxNjc0NjQzOH0.P12TfvQXJc9xubDXP8lPAv9HEUG-9v1F4sSJNxJQ3sQ",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidXNlcm5hbWUiOiJhZG1pbjUiLCJpYXQiOjE2MTY2OTUwMjgsImV4cCI6MTYxNjY5NTUyOH0.jrv32fH6dJZbiuDJ32Gl03btip8Av5R5TB3qNH6w-r8\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,14 +359,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/newAccessToken",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/refreshAccessToken",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
-								"newAccessToken"
+								"refreshAccessToken"
 							]
 						}
 					},
@@ -394,59 +374,62 @@
 				{
 					"name": "GetTaskApp",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtTodoAccessToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
-								"type": "text"
+								"value": "Bearer {{jwtTodoAccessToken}}",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3001/getTask?=",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/getTask",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
 								"getTask"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GetTaskById",
+					"name": "GetTaskByIdApp",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3001/findTaskById?id=2",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/getTaskById?id=29",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
-								"findTaskById"
+								"getTaskById"
 							],
 							"query": [
 								{
 									"key": "id",
-									"value": "2"
+									"value": "29"
 								}
 							]
 						}
@@ -460,15 +443,14 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3001/getTaskByUsername?username=admin5",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/getTaskByUsername?username=admin5",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
@@ -491,13 +473,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n      \"date\": \"1\",\r\n      \"text\": \"secondo task.task\",\r\n      \"user\": \"admin6\",\r\n      \"status\": \"toDo\"\r\n    }",
+							"raw": "{\r\n      \"date\": \"1\",\r\n      \"text\": \"postan\",\r\n      \"username\": \"admin6\",\r\n      \"status\": \"toDo\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -505,10 +487,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/addTask",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/addTask",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
@@ -525,13 +506,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"30\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -539,14 +520,19 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/deleteTask",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/deleteTask?id=32",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
 								"deleteTask"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "32"
+								}
 							]
 						}
 					},
@@ -559,13 +545,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{jwtTodoApp}}",
+								"value": "Bearer {{jwtTodoAccessToken}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n      \"date\": \"2021-03-27T16:26:57.923Z\",\r\n      \"text\": \"Task n. 1.test2.test2\",\r\n      \"username\": \"test2\",\r\n      \"status\": \"toDo\",\r\n      \"id\": 3\r\n    }",
+							"raw": "{\r\n      \"date\": \"2021-03-27T16:26:57.923Z\",\r\n      \"text\": \"Task n. 1.test2.test2.343\",\r\n      \"username\": \"test2\",\r\n      \"status\": \"toDo\",\r\n      \"id\": 3\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -573,10 +559,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/updateTask/",
-							"protocol": "http",
+							"raw": "{{my_ip}}:3001/updateTask/",
 							"host": [
-								"localhost"
+								"{{my_ip}}"
 							],
 							"port": "3001",
 							"path": [
@@ -588,6 +573,29 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
