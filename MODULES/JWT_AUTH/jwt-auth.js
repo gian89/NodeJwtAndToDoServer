@@ -1,4 +1,5 @@
 const  jwt  =  require('jsonwebtoken');
+const CustomError = require("../../Utilities/CustomError");
 const {secretKey,expireTime} = require('../../config');
 
 
@@ -10,18 +11,9 @@ const verifyUser = (accessToken) => {
             resolve(payload);
         } catch(error) {
             if (error instanceof jwt.TokenExpiredError){
-                let expiredTokenResponse = {
-                    "status": 400,
-                    "message": "expired token"
-                };
-                console.log("jwt expired");
-                reject(expiredTokenResponse);
+                reject(new CustomError(400, "expired token"));
             }else {
-                let notValidTokenResponse = {
-                    "status": 401,
-                    "message": "Invalid  token"
-                };
-                reject(notValidTokenResponse);
+                reject(new CustomError(401, "Invalid  token"));
             }
 
         }
@@ -39,11 +31,9 @@ const newAccessToken = (refreshToken) => {
             });
             resolve(accessToken);
         } catch(error) {
-            let notValidTokenResponse = {
-                "status": 401,
-                "message": "Invalid  token"
-            };
-            reject(notValidTokenResponse);
+            reject(new CustomError(401, "Invalid  token"));
+
+
         }
     })
 

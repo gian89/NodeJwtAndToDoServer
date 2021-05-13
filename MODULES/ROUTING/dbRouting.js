@@ -1,4 +1,5 @@
 const router = require('./configRouting');
+const CustomError = require("../../Utilities/CustomError");
 const {verifyUser} = require("../JWT_AUTH/jwt-auth");
 
 /*
@@ -73,10 +74,7 @@ router.delete('/deleteTask', async (req, res) => {
 const routeCaller = async (f, authorization, res, resValue, ...params) => {
     try {
         if (!authorization) {
-            throw ({
-                "status": 401,
-                "message": "Unauthorized"
-            })
+            throw new CustomError(401, "Unauthorized");
         }
         let accessToken = authorization.split(' ')[1];
         await verifyUser(accessToken);
